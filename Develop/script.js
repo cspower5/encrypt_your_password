@@ -1,8 +1,9 @@
 //Funciton Starts Here
+minlength = 8;
+maxlength = 128
 function generatePassword() {
 // Assignment code here
 var array_password = [];
-var randomitem = [];
 var totalset = [];
 var charset = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var upperset = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -13,8 +14,8 @@ var numset = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   var passlength = prompt("How long do you want the password to be?");
   parseInt(passlength);
   //verify if the length is at least 8 characters
-  while(passlength < 8 || passlength > 125) {
-      passlength = prompt("Password must be between 8 and 125 characters long")
+  while(passlength < minlength || passlength > maxlength) {
+      passlength = prompt("Password must be between 8 and 128 characters long")
   };
   //Confirming charater types for the password
   var passwordInfo = {

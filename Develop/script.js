@@ -1,3 +1,5 @@
+//Funciton Starts Here
+function generatePassword() {
 // Assignment code here
 var array_password = [];
 var randomitem = [];
@@ -7,9 +9,7 @@ var upperset = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 var lowerset = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numset = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-//Funciton Starts Here
-function generatePassword() {
-  //Get the length of the password.
+ //Get the length of the password.
   var passlength = prompt("How long do you want the password to be?");
   parseInt(passlength);
   //verify if the length is at least 8 characters
@@ -46,7 +46,6 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //true true false false
     else if(passwordInfo.passchar && passwordInfo.passupper && !passwordInfo.passlower && !passwordInfo.passnum) {
@@ -54,14 +53,12 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //true false false false
     else if(passwordInfo.passchar && !passwordInfo.passupper && !passwordInfo.passlower && !passwordInfo.passnum) {
       for(let i = 0; i < passlength; i++) {
         array_password.push(charset[Math.floor(Math.random() * charset.length)]);
       };
-      console.log(password);
     }
     //true true false true
     else if(passwordInfo.passchar && passwordInfo.passupper && !passwordInfo.passlower && passwordInfo.passnum) {
@@ -69,7 +66,6 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //false true true true
     else if(!passwordInfo.passchar && passwordInfo.passupper && passwordInfo.passlower && passwordInfo.passnum) {
@@ -77,7 +73,6 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //false true true false
     else if(!passwordInfo.passchar && passwordInfo.passupper && passwordInfo.passlower && !passwordInfo.passnum) {
@@ -85,14 +80,12 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //false true false false
     else if(!passwordInfo.passchar && passwordInfo.passupper && !passwordInfo.passlower && !passwordInfo.passnum) {
       for(let i = 0; i < passlength; i++) {
         array_password.push(upperset[Math.floor(Math.random() * upperset.length)]);
       };
-      console.log(password);
     }
     //false false true true
     else if(!passwordInfo.passchar && !passwordInfo.passupper && passwordInfo.passlower && passwordInfo.passnum) {
@@ -100,21 +93,18 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //false false true false
     else if(!passwordInfo.passchar && !passwordInfo.passupper && passwordInfo.passlower && !passwordInfo.passnum) {
       for(let i = 0; i < passlength; i++) {
         array_password.push(lowerset[Math.floor(Math.random() * lowerset.length)]);
       };
-      console.log(password);
     }
     //false false false true
     else if(!passwordInfo.passchar && !passwordInfo.passupper && !passwordInfo.passlower && passwordInfo.passnum) {
       for(let i = 0; i < passlength; i++) {
         array_password.push(numset[Math.floor(Math.random() * numset.length)]);
       };
-      console.log(password);
     }
     //true false true true
     else if(passwordInfo.passchar && !passwordInfo.passupper && passwordInfo.passlower && passwordInfo.passnum) {
@@ -122,7 +112,6 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //false false true false
     else if(passwordInfo.passchar && !passwordInfo.passupper && passwordInfo.passlower && !passwordInfo.passnum) {
@@ -130,7 +119,6 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //true false false true
     else if(passwordInfo.passchar && !passwordInfo.passupper && !passwordInfo.passlower && passwordInfo.passnum) {
@@ -138,7 +126,6 @@ function generatePassword() {
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     password = array_password.join("");
     return(password);

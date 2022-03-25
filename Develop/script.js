@@ -1,8 +1,8 @@
 //Funciton Starts Here
-minlength = 8;
-maxlength = 128
 function generatePassword() {
 // Assignment code here
+minlength = 8;
+maxlength = 128
 var array_password = [];
 var totalset = [];
 var charset = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
@@ -39,7 +39,6 @@ var numset = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
       for(let i = 0; i < passlength; i++) {
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
-      console.log(password);
     }
     //true true true false
     else if(passwordInfo.passchar && passwordInfo.passupper && passwordInfo.passlower && !passwordInfo.passnum) {

@@ -13,10 +13,18 @@ var numset = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
  //Get the length of the password.
   var passlength = prompt("How long do you want the password to be?");
   parseInt(passlength);
-  //verify if the length is at least 8 characters
-  while(passlength < minlength || passlength > maxlength) {
-      passlength = prompt("Password must be between 8 and 128 characters long")
+  if (passlength) {
+  //verify a number was input.
+  while (!isNumber(passlength)){
+    passlength = prompt("Password must be a number between 8 and 128 characters long");
+  } 
+   //verify if the length is at least 8 characters
+     while(passlength < minlength || passlength > maxlength) {
+      passlength = prompt("Password must be between 8 and 128 characters long");
   };
+};
+
+
   //Confirming charater types for the password
   var passwordInfo = {
     passchar: confirm("Do you want to use special characters?"),
@@ -127,6 +135,20 @@ var numset = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
         array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
       };
     }
+    //true false true false
+    else if(passwordInfo.passchar && !passwordInfo.passupper && passwordInfo.passlower && !passwordInfo.passnum) {
+      totalset = charset.concat(lowerset);
+      for(let i = 0; i < passlength; i++) {
+        array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
+      };
+    }
+      //false true false true
+    else if(!passwordInfo.passchar && passwordInfo.passupper && !passwordInfo.passlower && passwordInfo.passnum) {
+      totalset = upperset.concat(numset);
+      for(let i = 0; i < passlength; i++) {
+        array_password.push(totalset[Math.floor(Math.random() * totalset.length)]);
+      };
+    }
     password = array_password.join("");
     return(password);
 };
@@ -139,6 +161,11 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+}
+
+function isNumber(value) {
+  var numberPattern = /^[0-9]+$/; // one or more of digits 0 to 9
+  return numberPattern.test(value);
 }
 
 // Add event listener to generate button
